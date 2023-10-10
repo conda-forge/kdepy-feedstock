@@ -1,5 +1,5 @@
 {% set name = "kdepy" %}
-{% set version = "1.1.5" %}
+{% set version = "1.1.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/KDEpy-{{ version }}.tar.gz
-  sha256: 760c0a302d06d1566aea2b8c7f50f59b0d7bced03c8efbd06343c3b95dff5ec0
+  sha256: d26f24c7886e341be6a414e226250f0ae2d6059e8fecaf32ad1f66699ca7a1ae
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
