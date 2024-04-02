@@ -25,7 +25,7 @@ requirements:
     - setuptools >=45
     - wheel
     - cython >=0.29,<3.0.0
-    - numpy >=1.14.2,<2.0.0
+    - numpy
     - pip
   run:
     - python
