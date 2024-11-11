@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/KDEpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/KDEpy-{{ version }}.tar.gz
   sha256: 4bf0b2afd430ce5b40fafd98144de83d8b715d46fdf0f45fed2b5c2e9c40ce46
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,6 +20,7 @@ requirements:
     - cython >=0.29,<3.0.0                   # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools >=45
