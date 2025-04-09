@@ -8,6 +8,10 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 603cc3cd1c80bb0a7a9b0b74ebae117d312e37cee8fc1c637b46888e48d91085
+  patches:
+    # pyx file is missing in PyPI release, but pre-Cythonized C file exists;
+    # patch to build with this for now.
+    - patches/0001-fix-missing-pyx-file.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
