@@ -268,4 +268,5 @@ Feedstock Maintainers
 =====================
 
 * [@davecwright3](https://github.com/davecwright3/)
+* [@ken-lauer](https://github.com/ken-lauer/)
 
