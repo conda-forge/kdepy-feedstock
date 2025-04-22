@@ -1,13 +1,13 @@
 {% set name = "kdepy" %}
-{% set version = "1.1.9" %}
+{% set version = "1.1.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/KDEpy-{{ version }}.tar.gz
-  sha256: 4bf0b2afd430ce5b40fafd98144de83d8b715d46fdf0f45fed2b5c2e9c40ce46
+  url: https://github.com/tommyod/KDEpy/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 3411712fd505f5a751aa1012656813e9d46b747416168aba2579b11656f14684
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,6 +20,7 @@ requirements:
     - cython >=0.29,<3.0.0                   # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools >=45
@@ -50,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - davecwright3
+    - ken-lauer
